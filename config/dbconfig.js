@@ -1,0 +1,1 @@
+exports.dbConfig="mongodb+srv://devasnhbhatt10:6DKXy6QypJ7Sr7JX@cluster0.amrif11.mongodb.net/?retryWrites=true&w=majority"
