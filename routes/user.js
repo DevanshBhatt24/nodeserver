@@ -4,10 +4,10 @@ const router = express.Router()
 const userController = require('../controllers/userController')
 
 router.route('/addEmployee')
-.post(genHash, userController.addUser)
+.post( userController.addUser)
 
 router.route('/getData')
-.post(checkPass, userController.getUser)
+.post(userController.getUser)
 
 
 module.exports = router
