@@ -1,33 +1,29 @@
-exports.registerUser = async (req, res)=>{
+exports.addUser = async (req, res)=>{
+    const { email, username,address, salary, phoneNumber, hireDate} = req.body
+    
+    const user = new User({email, username,address,phoneNumber,salary,hireDate })
+   const res=  await user.save()
     res.status(200).json({
-        "message":"Register successful",
+        "message":"User added successful",
         "user":{
             "username":req.user.username,
-            "email":req.user.email,
-            "isAdmin":req.user.isAdmin
+            "email":req.user.email,   
         },
         "token":req.token
     })
 }
 
-exports.loginUser = (req, res)=>{
-    res.status(200).json({
-        "message":"Login successful",
-        "user":{
-            "username":req.user.username,
-            "email":req.user.email,
-            "isAdmin":req.user.isAdmin
-        },
-        "token": req.token
-    })
+exports.getUser = async (req, res)=>{
+    try {
+        const data = await Employee.find();
+        if(product.length==0){
+            res.status(404).json(message404);
+        }
+        res.status(200).json(data);
+    } catch (error) {
+        console.log(error);
+        res.status(500).json(message500);
+    }
+   
 }
 
-exports.logoutUser = async (req, res)=>{
-    console.log(req)
-    req.user.tokens = req.user.tokens.filter((token)=>{
-        return token !== req.token
-    })
-    req.user.save()
-    res.removeHeader('Auth-token')
-    res.status(200).json({"message":"Logout successful"})
-}

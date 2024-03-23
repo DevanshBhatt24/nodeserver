@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
+var SchemaTypes = Schema.Types;
 
 const userSchema =new Schema({
     username:{
@@ -13,9 +14,20 @@ const userSchema =new Schema({
         required: true
     },
     
-    password:{
+    address:{
+        type:String,
+        required: true
+    },
+    phoneNumber:{
         type:String,
         required:true
+    },
+    salary:{
+        type:SchemaTypes.Decimal128,
+        required:true
+    },
+    hireDate:{
+        type: Date
     },
     tokens:[{
         type:String
@@ -23,5 +35,5 @@ const userSchema =new Schema({
 
 })
 
-const User = mongoose.model('User', userSchema)
+const User = mongoose.model('Employee', userSchema)
 module.exports = User

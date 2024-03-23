@@ -1,18 +1,13 @@
 const express = require('express')
 const router = express.Router()
 
-const {genHash, checkPass} = require('../utils/genPass')
-const auth = require('../utils/auth')
-
 const userController = require('../controllers/userController')
 
-router.route('/register')
-.post(genHash, userController.registerUser)
+router.route('/addEmployee')
+.post(genHash, userController.addUser)
 
-router.route('/login')
-.post(checkPass, userController.loginUser)
+router.route('/getData')
+.post(checkPass, userController.getUser)
 
-router.route('/logout')
-.post(auth, userController.logoutUser)
 
 module.exports = router
