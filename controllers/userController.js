@@ -2,7 +2,8 @@ exports.addUser = async (req, res)=>{
     const { email, username,address, salary, phoneNumber, hireDate} = req.body
     
     const user = new User({email, username,address,phoneNumber,salary,hireDate })
-   const res=  await user.save()
+   const response=  await user.save()
+   console.log(response)
     res.status(200).json({
         "message":"User added successful",
         "user":{
