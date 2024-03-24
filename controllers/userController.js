@@ -12,12 +12,15 @@ exports.addUser = async (req, res)=>{
         },
         "token":req.token
     })
+    res.status(404).json({
+        "message":message404,
+    })
 }
 
 exports.getUser = async (req, res)=>{
     try {
         const data = await Employee.find();
-        if(product.length==0){
+        if(data.length==0){
             res.status(404).json(message404);
         }
         res.status(200).json(data);

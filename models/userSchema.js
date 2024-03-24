@@ -22,6 +22,10 @@ const userSchema =new Schema({
         type:String,
         required:true
     },
+    designation:{
+        type:String,
+        required:true
+    },
     salary:{
         type:SchemaTypes.Decimal128,
         required:true
