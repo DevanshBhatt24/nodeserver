@@ -1,4 +1,4 @@
-const User = require('../model/userSchema')
+const User = require('../models/userSchema')
 exports.addUser = async (req, res)=>{
     const { email, username,address, salary, phoneNumber, hireDate} = req.body
     
