@@ -26,12 +26,13 @@ const userSchema =new Schema({
         type:String,
         required:true
     },
+   
+    hireDate:{
+        type: Date
+    },
     salary:{
         type:SchemaTypes.Decimal128,
         required:true
-    },
-    hireDate:{
-        type: Date
     },
     tokens:[{
         type:String
