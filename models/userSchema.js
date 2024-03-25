@@ -5,7 +5,7 @@ var SchemaTypes = Schema.Types;
 const userSchema =new Schema({
     username:{
         type: String,
-        unique: true,
+     
         required: true
     },
     email:{
@@ -20,6 +20,7 @@ const userSchema =new Schema({
     },
     phoneNumber:{
         type:String,
+        unique:true,
         required:true
     },
     designation:{

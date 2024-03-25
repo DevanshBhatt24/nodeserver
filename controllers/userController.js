@@ -7,10 +7,7 @@ exports.addUser = async (req, res)=>{
    console.log(response)
     res.status(200).json({
         "message":"User added successful",
-        "user":{
-            "username":req.user.username,
-            "email":req.user.email,   
-        },
+           "id" :response._id,
         "token":req.token
     })
     res.status(404).json({
