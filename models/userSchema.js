@@ -33,7 +33,7 @@ const userSchema =new Schema({
 
     },
     salary:{
-        type:SchemaTypes.Decimal128,
+        type:String,
         required:true
     },
     tokens:[{
