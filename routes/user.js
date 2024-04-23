@@ -7,7 +7,7 @@ router.route('/addEmployee')
 .post( userController.addUser)
 
 router.route('/getData')
-.post(userController.getUser)
+.get(userController.getUser)
 
 
 module.exports = router
