@@ -14,10 +14,6 @@ const userSchema =new Schema({
         required: true
     },
     
-    address:{
-        type:String,
-        required: true
-    },
     phoneNumber:{
         type:String,
         unique:true,
@@ -37,9 +33,10 @@ const userSchema =new Schema({
         type:String,
         required:true
     },
-    tokens:[{
-        type:String
-    }],
+    isActive:{
+        type:String,
+        required:true
+    }
 
 })
 
