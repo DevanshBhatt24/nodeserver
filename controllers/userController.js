@@ -17,7 +17,7 @@ exports.addUser = async (req, res)=>{
 
 exports.getUser = async (req, res)=>{
     try {
-        const data = await Employee.find();
+        const data = await User.find();
         if(data.length==0){
             res.status(404).json(message404);
         }
