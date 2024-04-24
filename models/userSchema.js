@@ -36,7 +36,10 @@ const userSchema =new Schema({
     isActive:{
         type:String,
         required:true
-    }
+    },
+    tokens:[{
+        type:String
+    }],
 
 })
 
