@@ -1,8 +1,8 @@
 const User = require('../models/userSchema')
 exports.addUser = async (req, res)=>{
-    const { username,email,address,phoneNumber,designation, hireDate,salary} = req.body
+    const { username,email,phoneNumber,designation, hireDate,salary, isActive} = req.body
     
-    const user = new User({username,email, address,phoneNumber,designation,hireDate,salary })
+    const user = new User({username,email,phoneNumber,designation,hireDate,salary,isActive })
    const response=  await user.save()
    console.log(response)
     res.status(200).json({
